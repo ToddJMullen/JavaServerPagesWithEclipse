@@ -20,7 +20,7 @@ public class GameNumber {
 	{
 	}
 
-
+	
 	/**
 	 * @param value
 	 */
@@ -32,8 +32,7 @@ public class GameNumber {
 			this.value = value;
 		}		
 	}
-
-
+	
 
 	/**
 	 * @return the value
@@ -42,6 +41,7 @@ public class GameNumber {
 	{
 		return value;
 	}
+	
 
 	/**
 	 * @param value the value to set
@@ -54,6 +54,7 @@ public class GameNumber {
 			this.value = value;
 		}		
 	}
+	
 	
 	/**
 	 * Generates pseudo-random number between minimum & maximum
@@ -68,7 +69,7 @@ public class GameNumber {
 	
 	
 	/**
-	 * Increments the value by one
+	 * Increments the v
 	 */
 	public void increment()
 	{

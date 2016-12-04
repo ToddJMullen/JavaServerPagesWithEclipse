@@ -1,17 +1,61 @@
+<%@page import="model.GameNumber"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
- <%
- //initialize the game numbers
- 
- %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page import="model.GameNumber" %>    
+<%
+//initialize the game numbers
+GameNumber min		= new GameNumber(0);
+GameNumber max		= new GameNumber(1000);
+GameNumber target	= new GameNumber();
+target.setRandom(min.getValue(), max.getValue());
+//initial number of guesses
+GameNumber guesses	= new GameNumber(1);
+
+%>
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Java/JSP Guessing Game</title>
 </head>
 <body>
+<h1>Java/JSP Guessing Game</h1>
+<p>Welcome to the guessing game!</p>
+<p>
+Please guess a number between <%= min.getValue() %> and <%= max.getValue() %>
+</p>
+
+<form name="formGuesses" action="guess.jsp" method="post">
+
+<label>Guess <%= guesses.getValue() %></label>
+
+<input name="guess" value="0" type="text"
+placeholder="Guess between <%= min.getValue() %> and <%= max.getValue() %>" />
+<br />
+
+<button type="submit">Go</button>
+
+<!-- Temporary hidden fields to store state.
+ Learning only / this is a bad practice -->
+
+<input name="min" value="<%= min.getValue() %>" type="hidden" />
+<input name="max" value="<%= max.getValue() %>" type="hidden" />
+<input name="target" value="<%= target.getValue() %>" type="hidden" />
+<input name="guesses" value="<%= guesses.getValue() %>" type="hidden" />
+
+
+</form>
+
+
+
+
+
+
+
+
+
+
+
 
 </body>
 </html>
