@@ -25,7 +25,7 @@ String previousGuesses	= "";
 Please guess a number between <%= min.getValue() %> and <%= max.getValue() %>
 </p>
 
-<form name="formGuesses" action="guess.jsp" method="post">
+<form name="formGuesses" action="guess" method="post">
 
 <label>Guess <%= guesses.getValue() %></label>
 
