@@ -1,7 +1,6 @@
 <%@page import="model.GameNumber"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ page import="model.GameNumber" %>    
+    pageEncoding="UTF-8"%> 
 <%
 //initialize the game numbers
 GameNumber min		= new GameNumber(0);
@@ -10,6 +9,7 @@ GameNumber target	= new GameNumber();
 target.setRandom(min.getValue(), max.getValue());
 //initial number of guesses
 GameNumber guesses	= new GameNumber(1);
+String previousGuesses	= "";
 
 %>
 <!DOCTYPE html>
@@ -42,6 +42,7 @@ placeholder="Guess between <%= min.getValue() %> and <%= max.getValue() %>" />
 <input name="max" value="<%= max.getValue() %>" type="hidden" />
 <input name="target" value="<%= target.getValue() %>" type="hidden" />
 <input name="guesses" value="<%= guesses.getValue() %>" type="hidden" />
+<input name="previousGuesses"	value="<%= previousGuesses %>" type="hidden" />
 
 
 </form>
