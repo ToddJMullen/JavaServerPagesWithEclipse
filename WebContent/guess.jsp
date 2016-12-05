@@ -10,8 +10,7 @@ GameNumber min 		= new GameNumber(Integer.parseInt(request.getParameter("min")))
 GameNumber max 		= new GameNumber(Integer.parseInt(request.getParameter("max")));
 GameNumber target	= new GameNumber(Integer.parseInt(request.getParameter("target")));
 GameNumber guesses	= new GameNumber(Integer.parseInt(request.getParameter("guesses")));
-String uArr = "l";
-String dArr = "h";
+
 String arr = (guess.getValue() > target.getValue()) ? "<" : ">";
 String previousGuesses = request.getParameter("previousGuesses") + ", " + arr + " " + guess.getValue();
 
@@ -20,7 +19,7 @@ String msg = "";
 if( guess.getValue() == target.getValue() ){
 	msg = "You guessed " + target.getValue() + " correctly in " + guesses.getValue() + " guesses!";
 } else {
-	msg = (guess.getValue() > target.getValue()) ? guess.getValue() + " is too high " + dArr : guess.getValue() + " is too low " + uArr;
+	msg = (guess.getValue() > target.getValue()) ? guess.getValue() + " is too high " : guess.getValue() + " is too low ";
 }
 guesses.increment();
 %>

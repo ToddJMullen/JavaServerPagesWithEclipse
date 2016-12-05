@@ -16,16 +16,16 @@ String previousGuesses	= "";
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Java/JSP Guessing Game</title>
+<title>MVC Java/JSP Guessing Game</title>
 </head>
 <body>
 <h1>Java/JSP Guessing Game</h1>
-<p>Welcome to the guessing game!</p>
+<p>Welcome to the guessing game! (MVC)</p>
 <p>
 Please guess a number between <%= min.getValue() %> and <%= max.getValue() %>
 </p>
 
-<form name="formGuesses" action="guess" method="post">
+<form name="formGuesses" action="doGuess" method="post">
 
 <label>Guess <%= guesses.getValue() %></label>
 
@@ -46,14 +46,6 @@ placeholder="Guess between <%= min.getValue() %> and <%= max.getValue() %>" />
 
 
 </form>
-
-
-
-
-
-
-
-
 
 
 
